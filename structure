@@ -1,0 +1,53 @@
+1. Import Libraries
+
+2. Load the Dataset
+   - Read CSV
+   - Preview the dataset
+
+3. Dataset Overview
+   - Data types
+   - Missing values
+
+4. Data Cleaning and Feature Engineering
+   - Convert numeric columns
+   - Handle ratings for new customers
+   - Create Cost_per_Minute
+   - Create Supply_and_Demand
+
+5. Exploratory Data Analysis (EDA)
+   5.1 Time of Booking Distribution (Pie Chart)
+   5.2 Average Supply and Demand by Time (Bar Chart)
+   5.3 Supply and Demand by Vehicle Type and Time (Heatmap)
+   5.4 Average Revenue by Time of Booking
+   5.5 Average Supply and Demand by Region
+   5.6 Vehicle Type Distribution
+   5.7 Average Cost per Minute by Region and Vehicle Type
+
+6. Price Prediction Model
+   - One-Hot Encoding
+   - Train/Test Split
+   - Random Forest Regressor
+   - Model Training
+   - R² Score
+
+7. Model Evaluation （New)
+   7.1 Evaluation Metrics
+       - R² Score
+       - Mean Absolute Error (MAE)
+       - Root Mean Squared Error (RMSE)
+
+   7.2 Predicted vs Actual Prices
+       - Scatter Plot
+       - Reference Line
+
+   7.3 Feature Importance
+       - Importance Ranking
+       - Bar Chart
+
+8. Price Prediction Function
+   - predict_ride_cost()
+
+9. Test Example
+   - Predict ride price using sample inputs
+
+10. Conclusion (for report/PPT, not necessarily inside notebook)

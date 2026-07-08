@@ -1,0 +1,155 @@
+Step 1:
+	Data Cleaning:
+		Check missing values
+		Check duplicates
+		Check incorrect data types
+		Check impossible values
+		Encode categorical variables if necessary
+		Create new variables (optional)
+
+	Like:
+		df.isnull().sum()
+		df.duplicated().sum()
+		df.describe()
+		df.info()
+
+
+Step 2:
+	Understand variables:
+
+	For numerical variables:
+		histograms
+		boxplots
+		summary statistics
+
+	For categorical variables:
+		bar charts
+		frequency tables
+
+	Look especially at:
+		Number_of_Riders
+		Number_of_Drivers
+		Historical_Cost_of_Ride
+		Expected_Ride_Duration
+
+Step 3:
+	Supply & Demand Analysis:
+	Questions to answer:
+		When demand increases, does fare increase?
+		When drivers decrease, does fare increase?
+		What is the rider/driver ratio?
+		Does surge pricing happen?
+
+	Possible new variable:
+		Demand Supply Ratio
+		=
+		Number_of_Riders
+		/
+		Number_of_Drivers
+
+	Then analyze:
+		ratio vs price
+		riders vs price
+		drivers vs price
+
+	Good graphs
+
+	scatter plots
+	heatmaps
+	correlation matrix
+
+Step 4:
+	Pricing Factor Analysis:
+	Which variables affect price the most?
+
+	Variables:
+		Ride duration
+		Vehicle type
+		Time of booking
+		Customer loyalty
+		Ratings
+		Location
+
+	Possible methods:
+		Correlation
+		ANOVA
+		Feature importance
+		Random Forest importance
+
+Step 5:
+	Visualization Dashboard:
+	  Could contain:
+		Average fare
+		Average demand
+		Driver availability
+		Fare by vehicle type
+		Fare by location
+		Surge ratio
+		Correlation heatmap
+
+	Using Python:
+		Plotly
+		Dash
+		Streamlit
+
+Step 6:
+	Ride Fare Prediction Model:
+	Target variable
+
+	Historical_Cost_of_Ride
+
+	Possible models:
+		Linear Regression
+		Random Forest Regressor
+		XGBoost
+		Decision Tree
+	Split:
+		80% training
+		20% testing
+
+	Evaluation:
+		MAE
+		RMSE
+		R²
+
+	Then compare models
+
+Step 7:
+	Business Recommendation:
+	Write sth fancy sounding haha
+
+Step 8:
+	Executive Summary:
+	Very short, one paragraph.
+	Include:
+		objective
+		method
+		key findings
+		recommendations
+
+
+
+Report outline:
+
+Page 1:
+	Problem Statement
+	Project objective
+Page 2:
+	Method we used, step by step
+	Psuedocode, explanations using linear thread maybe
+Page 3-4:
+	Findings, important insigths 
+	Some of the most important graphs
+	Maybe:
+		Correlation Heatmap
+		Fare Distribution
+		Rider/Driver Ratio vs Fare
+		Feature Importance
+		Predicted vs Actual
+Page 5:
+	Business Recommendation, like:
+		Introduce surge pricing when demand exceeds supply.
+		Increase driver incentives during evening demand peaks.
+		Promote Premium vehicles during high-demand periods.
+		Reward loyal customers with discounts during off-peak hours.
+		Continuously retrain pricing models using new ride data.

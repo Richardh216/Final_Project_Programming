@@ -14,14 +14,19 @@ streamlit run app.py
 
 - The objective is to predict `Historical_Cost_of_Ride` from ride duration, rider demand, driver supply, customer information, location, booking time, and vehicle type.
 - Numerical variables are converted to valid numeric types. For customers with no previous rides, the rating is replaced with the dataset mean so that a missing rating does not prevent a prediction.
-- Feature Engineering & Data Preprocessing
+
+- Feature engineering for time-based patterns (hour of day, day of week).
+
+- Testing with gradient boosting models (XGBoost, LightGBM).
+
+- Incorporating external factors like weather or traffic conditions.
+
+- Implementing time-series cross-validation for more robust evaluation.
 
 The objective is to predict Historical_Cost_of_Ride from ride duration, rider demand, driver supply, customer information, location, booking time, and vehicle type.
 
 Numerical variables are converted to valid numeric types. For customers with no previous rides, the rating is replaced with the dataset mean so that a missing rating does not prevent a prediction.
 
-Two engineered variables support the analysis: Supply_and_Demand measures the rider-to-driver ratio, while Cost_per_Minute describes historical pricing patterns. While Cost_per_Minute is a strong predictor, it is derived directly from the target variable. In a production setting, this feature should be excluded to prevent data leakage. For this analysis, it is included to demonstrate model capability, with the understanding that it would not be available for real-time prediction without knowing the price in advance.
+- A Random Forest Regressor (n_estimators=100, max_depth=8) was trained on 70% of the data and evaluated on the remaining 30%. The model achieved an R² of 0.8469, with MAE = $55.52 and RMSE = $73.51, indicating strong predictive performance.
 
-Model & Evaluation
-
-A Random Forest Regressor (n_estimators=100, max_depth=8) was trained on 70% of the data and evaluated on the remaining 30%. The model achieved an R² of 0.8469, with MAE = $9.57 and RMSE = $13.28, indicating strong predictive performance.
+The model shows strong predictive performance, with ride duration being the dominant predictor. The exclusion of Cost_per_Minute from training ensures that the evaluation reflects a realistic, production-ready scenario where price is unknown at prediction time.

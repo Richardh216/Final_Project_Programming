@@ -12,9 +12,6 @@ streamlit run app.py
 
 ## Modelling approach
 
-- `Historical_Cost_of_Ride` is the target.
-- `Cost_per_Minute` is used only for EDA. It is excluded from training because it is calculated from the target and would leak the answer into the model.
-- Linear Regression, Decision Tree, and Random Forest are compared with the same shuffled five-fold cross-validation splits.
-- The model with the lowest mean CV RMSE is selected, then reported on a separate 20% test split.
-
-Shared preparation and modelling code lives in `model_utils.py`, so the dashboard and notebook use the same logic.
+- The objective is to predict `Historical_Cost_of_Ride` from ride duration, rider demand, driver supply, customer information, location, booking time, and vehicle type.
+- Numerical variables are converted to valid numeric types. For customers with no previous rides, the rating is replaced with the dataset mean so that a missing rating does not prevent a prediction.
+- Two engineered variables support the analysis: `Supply_and_Demand` measures the rider-to-driver ratio, while `Cost_per_Minute` describes historical pricing patterns. Because `Cost_per_Minute` is calculated from the target price, it is used only for EDA and is excluded from model training to prevent data leakage.

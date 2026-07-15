@@ -39,7 +39,7 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     cleaned.loc[cleaned["Number_of_Riders"] < 0, "Number_of_Riders"] = np.nan
     cleaned.loc[cleaned["Number_of_Drivers"] < 0, "Number_of_Drivers"] = np.nan
     cleaned.loc[~cleaned["Average_Ratings"].between(0, 5), "Average_Ratings"] = np.nan
-    cleaned.loc[cleaned["Number_of_Past_Rides"] == 0, "Average_Ratings"] = cleaned["Average_Ratings"].mean()
+    cleaned.loc[cleaned["Number_of_Past_Rides"] == 0, "Average_Ratings"] = cleaned["Average_Ratings"].median()
 
     cleaned = cleaned.dropna(subset=NUMERIC_COLUMNS + CATEGORICAL_COLUMNS)
 

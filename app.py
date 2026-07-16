@@ -265,10 +265,10 @@ with tab1:
                 data_dict[time_col] = 1
                 
             input_data = pd.DataFrame([data_dict])
-            predicted_price = model.predict(input_data)[0]
+            predicted_price = round(model.predict(input_data)[0], 0)
             
             st.markdown("### Estimated Fare Results:")
-            st.metric(label="Predicted Ride Cost", value=f"${predicted_price:.2f}")
+            st.metric(label="Predicted Ride Cost", value=f"${predicted_price:.0f}")
 
 # --- TAB 2: BUSINESS INSIGHTS ---
 with tab2:
